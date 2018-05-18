@@ -7,7 +7,7 @@ const Kurals = ({kurals}) =>{
 
   const kuralElement = kurals.map((kural,key)=>{
     return(
-      <Kural key={key} kural={kural}/>
+      <Kural key={key} kural={kural} id={key}/>
     )
   })
   return (
