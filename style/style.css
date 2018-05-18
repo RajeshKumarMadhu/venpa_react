@@ -45,6 +45,9 @@ input:focus{
 .main-list{
    margin:0;
 }
+.kural-list{
+  padding: 0;
+}
 .horizontal-li{
   display: flex;
   flex-direction: row;
