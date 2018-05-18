@@ -12,7 +12,7 @@ const Kurals = ({kurals}) =>{
   })
   return (
     <div className="main-list">
-      <ul className="">
+      <ul className="kural-list">
         {kuralElement}
       </ul>
     </div>
