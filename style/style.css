@@ -48,6 +48,11 @@ input:focus{
 .kural-list{
   padding: 0;
 }
+
+.kural-container{
+  color: #0275d8
+}
+
 .horizontal-li{
   display: flex;
   flex-direction: row;
