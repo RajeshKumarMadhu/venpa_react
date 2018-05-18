@@ -7,8 +7,8 @@ There are two methods for getting started with this repo.
 Checkout this repo, install dependencies, then start the gulp process with the following:
 
 ```
-> git clone gitURl
-> cd projectfolder
+> git clone https://github.com/RajeshKumarMadhu/venpa_react.git
+> cd venpa_react
 > npm install
 > npm start
 ```
