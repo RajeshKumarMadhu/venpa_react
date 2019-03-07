@@ -3,11 +3,10 @@ import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 
-import SearchBar from './component/search_bar';
 import HeaderContent from './component/header';
-import Muppaal from './component/muppaal';
-import AdhigaramList from './component/adhigaram_list';
-import Kurals from './component/kurals';
+import Muppaal from './component/muppaal/muppaal';
+import AdhigaramList from './component/adhigaram/adhigaram_list';
+import Kurals from './component/kural/kurals';
 
 var info = {title:'திருக்குறள்',thirukuralData: '',muppaal:[]};
 
@@ -46,18 +45,20 @@ class App extends Component{
 
   render(){
     return (
+    <div>
+      <HeaderContent title= {this.state.title} />
       <div className="row">
-        <div className="col-md-8 col-sm-12">
-            <HeaderContent title= {this.state.title} />
-            <SearchBar />
-            <Kurals kurals={this.state.fetchedKurals}/>
-       </div>
-       <div className="col-md-4 col-sm-12">
+
+       <div className="col-sm-12">
            <Muppaal onSelectedPaal={selectedPaal=>this.setState({selectedPaal})} muppaal={this.state.muppaal}/>
            <AdhigaramList adhigarams={this.state.selectedPaal} kurals={this.state.kurals}
             onSelectOfAdhigaram={fetchedKurals=>this.setState({fetchedKurals})}/>
        </ div>
+       <div className="col-sm-12">
+            <Kurals kurals={this.state.fetchedKurals}/>
+        </div>
      </div>
+    </div>
    );
   };
 }
