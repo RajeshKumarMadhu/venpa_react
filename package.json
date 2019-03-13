@@ -43,8 +43,6 @@
     "react-swipeable-views": "latest",
     "redux": "latest",
     "express": "*",
-    "body-parser":"*",
-    "bcrypt": "^0.8.5"
-
+    "body-parser":"*"
   }
 }
