@@ -5,7 +5,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-import Adhigaram from './adhigaramtab';
 
 function TabContainer(props) {
   return (
@@ -45,9 +44,18 @@ class ScrollableTabsButtonAuto extends React.Component {
 
     const Adhigarams = this.props.adhigarams.map((adhigaram, key)=>{
       return (
-        <Adhigaram key={adhigaram} adhigaram={adhigaram} kurals={this.props.kurals} onSelectOfAdhigaram={this.props.onSelectOfAdhigaram} value={key}/>
+        //<Adhigaram key={adhigaram} adhigaram={adhigaram} kurals={this.props.kurals}  value={key}/>
+        <Tab label={adhigaram} onClick={(e)=>fetchKurals(e,adhigaram)} value={key}/>
       )
-    })
+    });
+
+    const fetchKurals=(e,value)=>{
+      var filteredKurals = _.where(this.props.kurals,{chapter: value});
+      //var thirukurals= _.pluck(filteredKurals, 'kural');
+
+      var thirukurals = _.map(filteredKurals, thirukural => _.pick(thirukural, 'kural', 'meaning'))
+      this.props.onSelectOfAdhigaram(thirukurals);
+    }
 
     return (
       <div className={classes.root}>

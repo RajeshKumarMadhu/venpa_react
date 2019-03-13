@@ -42,6 +42,7 @@
     "react-router": "latest",
     "react-swipeable-views": "latest",
     "redux": "latest",
-    "youtube-api-search": "0.0.5"
+    "expressjs": "latest"
+
   }
 }

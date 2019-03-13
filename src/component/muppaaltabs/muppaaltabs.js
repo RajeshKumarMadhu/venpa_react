@@ -4,7 +4,6 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-import Paal from './paaltab';
 
 const styles = theme => ({
   root: {
@@ -13,7 +12,7 @@ const styles = theme => ({
   },
 });
 
-class DisabledTabs extends React.Component {
+class MuppaalTab extends React.Component {
   state = {
     value: 0,
   };
@@ -25,11 +24,10 @@ class DisabledTabs extends React.Component {
   render() {
 
     const { classes, theme } = this.props;
-
+//  <Paal key={paal.name} paal={paal} onSelectedPaal={this.props.onSelectedPaal} value={key}/>
     const paalElement = this.props.muppaal.map((paal,key)=>{
-      
       return(
-        <Paal key={paal.name} paal={paal} onSelectedPaal={this.props.onSelectedPaal} />
+        <Tab label={paal.name} onClick={()=>this.props.onSelectedPaal(paal.athigarams)} value={key}/>
       )
     });
 
@@ -48,9 +46,9 @@ class DisabledTabs extends React.Component {
     );
   }
 }
-DisabledTabs.propTypes = {
+MuppaalTab.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(DisabledTabs);
+export default withStyles(styles, { withTheme: true })(MuppaalTab);
