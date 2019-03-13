@@ -9,7 +9,7 @@ const Muppaal = ({muppaal,onSelectedPaal}) =>{
   })
   return (
       <ul className="muppaal-list">
-        <dl className="horizontal-li">
+        <dl>
           {paalElement}
         </dl>
       </ul>

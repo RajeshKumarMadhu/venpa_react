@@ -4,9 +4,10 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import HeaderContent from './component/header';
-import Muppaal from './component/muppaal/muppaal';
 import AdhigaramList from './component/adhigaram/adhigaram_list';
 import Kurals from './component/kural/kurals';
+
+import MuppaalTabs from './component/muppaaltabs/muppaaltabs';
 
 var info = {title:'திருக்குறள்',thirukuralData: '',muppaal:[]};
 
@@ -39,6 +40,13 @@ class App extends Component{
       }.bind(this));
   }
 
+  componentDidCatch(error, info) {
+    // Display fallback UI
+    this.setState({ hasError: true });
+    // You can also log the error to an error reporting service
+    logErrorToMyService(error, info);
+  }
+
   setInfo = () =>{
     this.setState({title :info.title,muppaal: info.muppaal});
   }
@@ -47,14 +55,15 @@ class App extends Component{
     return (
     <div>
       <HeaderContent title= {this.state.title} />
-      <div className="row">
 
-       <div className="col-sm-12">
-           <Muppaal onSelectedPaal={selectedPaal=>this.setState({selectedPaal})} muppaal={this.state.muppaal}/>
+      <div className="row">
+        <div className="col-md-12 col-sm-12">
+           <MuppaalTabs muppaal={this.state.muppaal} onSelectedPaal={selectedPaal=>this.setState({selectedPaal})}/>
+          <br/>
            <AdhigaramList adhigarams={this.state.selectedPaal} kurals={this.state.kurals}
             onSelectOfAdhigaram={fetchedKurals=>this.setState({fetchedKurals})}/>
        </ div>
-       <div className="col-sm-12">
+       <div className="col-md-8 col-sm-12">
             <Kurals kurals={this.state.fetchedKurals}/>
         </div>
      </div>
