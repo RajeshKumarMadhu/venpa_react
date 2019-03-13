@@ -9,6 +9,7 @@ const Kural = ({kural,id}) =>{
         <p>{kuralObj.kural[1]}</p>
         </div>
         <div id={'O'+id}>{kuralObj.meaning.ta_mu_va}</div>
+        <div id={'O'+id}>{kuralObj.meaning.ta_salamon}</div>
       </li>
   )
 }
