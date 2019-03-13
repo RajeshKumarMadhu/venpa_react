@@ -43,6 +43,7 @@
     "react-swipeable-views": "latest",
     "redux": "latest",
     "express": "*",
-    "body-parser":"*"
+    "body-parser":"*",
+    "axios":"*"
   }
 }
