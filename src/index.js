@@ -4,10 +4,9 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 
 import HeaderContent from './component/header';
-import AdhigaramList from './component/adhigaram/adhigaram_list';
 import Kurals from './component/kural/kurals';
-
 import MuppaalTabs from './component/muppaaltabs/muppaaltabs';
+import AdhigaramsTab from './component/adhigaramtabs/adhigaramstab'
 
 var info = {title:'திருக்குறள்',thirukuralData: '',muppaal:[]};
 
@@ -60,12 +59,10 @@ class App extends Component{
         <div className="col-md-12 col-sm-12">
            <MuppaalTabs muppaal={this.state.muppaal} onSelectedPaal={selectedPaal=>this.setState({selectedPaal})}/>
           <br/>
-           <AdhigaramList adhigarams={this.state.selectedPaal} kurals={this.state.kurals}
-            onSelectOfAdhigaram={fetchedKurals=>this.setState({fetchedKurals})}/>
+          <AdhigaramsTab adhigarams={this.state.selectedPaal} kurals={this.state.kurals}
+           onSelectOfAdhigaram={fetchedKurals=>this.setState({fetchedKurals})} />
+          <Kurals kurals={this.state.fetchedKurals}/>
        </ div>
-       <div className="col-md-8 col-sm-12">
-            <Kurals kurals={this.state.fetchedKurals}/>
-        </div>
      </div>
     </div>
    );
