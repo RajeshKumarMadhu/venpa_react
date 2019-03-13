@@ -42,7 +42,9 @@
     "react-router": "latest",
     "react-swipeable-views": "latest",
     "redux": "latest",
-    "expressjs": "latest"
+    "express": "*",
+    "body-parser":"*",
+    "bcrypt": "^0.8.5"
 
   }
 }
