@@ -1,7 +1,11 @@
 @media only screen and (min-width : 1200px) {
-
     .container { width: 1500px; }
+}
 
+@media (min-width: 960px){
+  .MuiTab-root-51 {
+      font-size: 1rem !important;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -19,8 +23,6 @@
    }
 
 }
-
-
 
 .header-content{
   margin: 20px;
