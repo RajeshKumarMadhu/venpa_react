@@ -4,6 +4,24 @@
 
 }
 
+@media only screen and (max-width: 320px) {
+
+   .kural-list {
+      font-size: x-small !important;
+   }
+
+}
+
+@media only screen and (max-width: 414px) and (min-width: 375px) {
+
+   .kural-list {
+      font-size: small !important;
+   }
+
+}
+
+
+
 .header-content{
   margin: 20px;
   text-align: center;
@@ -53,4 +71,8 @@
 
 .list-group-item:hover{
   background-color: #eee;
+}
+
+.text-danger{
+  color: pink:
 }

@@ -8,7 +8,7 @@ const Kural = ({kural,id}) =>{
         <p>{kuralObj.kural[0]}</p>
         <p>{kuralObj.kural[1]}</p>
         </div>
-        <div id={'O'+id}>{kuralObj.meaning.ta_mu_va}</div>
+        <div id={'O'+id} dangerouslySetInnerHTML={{__html: kuralObj.meaning.ta_mu_va}} />
         <div className="hidden-sm-down" id={'O'+id}>{kuralObj.meaning.ta_salamon}</div>
       </li>
   )
