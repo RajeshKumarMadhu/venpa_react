@@ -36,8 +36,8 @@ class ScrollableTabsButtonAuto extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-    const { value } = this.state;
+  //  const { classes } = this.props;
+  //  const { value } = this.state;
 
     if(!this.props.adhigarams)
         return <div> Loading .. </div>
@@ -58,10 +58,10 @@ class ScrollableTabsButtonAuto extends React.Component {
     }
 
     return (
-      <div className={classes.root}>
+      <div>
         <AppBar position="static" color="default">
           <Tabs
-            value={value}
+            value={this.state.value}
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
@@ -76,9 +76,5 @@ class ScrollableTabsButtonAuto extends React.Component {
     );
   }
 }
-
-ScrollableTabsButtonAuto.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 export default withStyles(styles)(ScrollableTabsButtonAuto);

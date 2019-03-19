@@ -32,7 +32,11 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
+    "axios": "*",
     "babel-preset-stage-1": "^6.1.18",
+    "body-parser": "*",
+    "dom-to-image": "^2.6.0",
+    "express": "*",
     "install": "^0.12.2",
     "lodash": "^3.10.1",
     "npm": "^6.9.0",
@@ -40,10 +44,8 @@
     "react-dom": "latest",
     "react-redux": "latest",
     "react-router": "latest",
+    "react-share": "^2.4.0",
     "react-swipeable-views": "latest",
-    "redux": "latest",
-    "express": "*",
-    "body-parser":"*",
-    "axios":"*"
+    "redux": "latest"
   }
 }

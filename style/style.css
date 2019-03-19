@@ -78,3 +78,14 @@
 .text-danger{
   color: pink:
 }
+
+.pull-right{
+  float:right;
+}
+
+.share-icon-parent{
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 15px;
+    text-align: center;
+}
