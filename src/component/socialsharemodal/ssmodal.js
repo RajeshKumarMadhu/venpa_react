@@ -28,7 +28,9 @@ function Transition(props) {
 class AlertDialogSlide extends React.Component {
   state = {
     open: false,
-    imageUrl:''
+    imageUrl:'',
+    path: window.location.href,
+    title: 'திருக்குறள்'
   };
 
   handleClickOpen = () => {
@@ -59,10 +61,10 @@ class AlertDialogSlide extends React.Component {
 
   render() {
     console.log(this.props);
-
+    //  <img src={this.state.imageUrl}/>
     return (
       <div>
-        <Icon variant="outlined" color="primary" onClick={()=>this.takeAPic(this.props.divId)}>file_copy</Icon>
+        <Icon variant="outlined" color="primary" onClick={()=>this.takeAPic(this.props.divId)}>share</Icon>
         <Dialog
           open={this.state.open}
           TransitionComponent={Transition}
@@ -77,12 +79,9 @@ class AlertDialogSlide extends React.Component {
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-slide-description">
-              Share it as image with your friends.
-              <img src={this.state.imageUrl}/>
-              <br/><br/>
               <div className="share-icon-parent">
                   <FacebookShareButton
-                      url={this.state.imageUrl}
+                      url={this.state.path}
                       quote={this.props.title}
                       className="Demo__some-network__share-button">
                       <FacebookIcon
@@ -92,7 +91,7 @@ class AlertDialogSlide extends React.Component {
               </div>
               <div className="share-icon-parent">
                   <TwitterShareButton
-                  url={this.state.imageUrl}
+                  url={this.state.path}
                   title={this.props.title}
                   className="Demo__some-network__share-button">
                   <TwitterIcon
@@ -103,7 +102,7 @@ class AlertDialogSlide extends React.Component {
                <div className="share-icon-parent">
                    <WhatsappShareButton
                       url={this.state.imageUrl}
-                      title={this.props.title}
+                      title={this.props.path}
                       separator=":: "
                       className="Demo__some-network__share-button">
                       <WhatsappIcon size={32} round />

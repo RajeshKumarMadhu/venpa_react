@@ -1,5 +1,7 @@
 import React from 'react';
 import Kural from './kural';
+import AlertDialogSlide from '../socialsharemodal/ssmodal';
+
 const Kurals = ({kurals}) =>{
 
   if(!kurals)
@@ -15,7 +17,9 @@ const Kurals = ({kurals}) =>{
       <ul className="kural-list">
         {kuralElement}
       </ul>
-
+      <div className="pull-right fixed-menu">
+          <AlertDialogSlide divId='k0'/>
+      </div>
     </div>
   )
 }

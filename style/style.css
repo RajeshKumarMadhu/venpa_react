@@ -40,6 +40,8 @@
 
 .main-list{
    margin:0;
+   overflow-y: scroll;
+   height: calc(100vh - 240px)
 }
 .kural-list{
   padding: 0;
@@ -82,6 +84,15 @@
 .pull-right{
   float:right;
 }
+
+.fixed-menu{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    width: 8em;
+    margin-top: -2.5em;
+}
+
 
 .share-icon-parent{
     vertical-align: top;

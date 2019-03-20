@@ -11,9 +11,6 @@ const Kural = ({kural,id}) =>{
 
   return (
       <li id={'k'+id} className="list-group-item box-emphasize">
-        <div className="pull-right">
-            <AlertDialogSlide divId={divId}/>
-        </div>
         <div className="kural-container">
         <p>{kuralObj.kural[0]}</p>
         <p>{kuralObj.kural[1]}</p>
