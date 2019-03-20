@@ -45,7 +45,7 @@ class ScrollableTabsButtonAuto extends React.Component {
     const Adhigarams = this.props.adhigarams.map((adhigaram, key)=>{
       return (
         //<Adhigaram key={adhigaram} adhigaram={adhigaram} kurals={this.props.kurals}  value={key}/>
-        <Tab label={adhigaram} onClick={(e)=>fetchKurals(e,adhigaram)} value={key}/>
+        <Tab label={adhigaram} onClick={(e)=>fetchKurals(e,adhigaram)} value={key} key={key}/>
       )
     });
 

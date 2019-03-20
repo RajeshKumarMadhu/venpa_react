@@ -27,7 +27,7 @@ class MuppaalTab extends React.Component {
 //  <Paal key={paal.name} paal={paal} onSelectedPaal={this.props.onSelectedPaal} value={key}/>
     const paalElement = this.props.muppaal.map((paal,key)=>{
       return(
-        <Tab label={paal.name} onClick={()=>this.props.onSelectedPaal(paal.athigarams)} value={key}/>
+        <Tab label={paal.name} onClick={()=>this.props.onSelectedPaal(paal.athigarams)} value={key} key={key}/>
       )
     });
 

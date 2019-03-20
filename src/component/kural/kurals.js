@@ -15,6 +15,7 @@ const Kurals = ({kurals}) =>{
       <ul className="kural-list">
         {kuralElement}
       </ul>
+
     </div>
   )
 }
