@@ -1,11 +1,17 @@
 import React from 'react';
 import Kural from './kural';
 import AlertDialogSlide from '../socialsharemodal/ssmodal';
+import ReactGA from 'react-ga';
 
 const Kurals = ({kurals}) =>{
 
   if(!kurals)
     return <div> Loading kural ...</div>
+
+  ReactGA.event({
+          category: 'Navigation',
+          action: 'Loading kural'
+  });
 
   const kuralElement = kurals.map((kural,key)=>{
     return(

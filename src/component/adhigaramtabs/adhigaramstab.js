@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
+import ReactGA from 'react-ga';
 
 function TabContainer(props) {
   return (
@@ -52,6 +53,10 @@ class ScrollableTabsButtonAuto extends React.Component {
     const fetchKurals=(e,value)=>{
       var filteredKurals = _.where(this.props.kurals,{chapter: value});
       //var thirukurals= _.pluck(filteredKurals, 'kural');
+      ReactGA.event({
+          category: 'Navigation',
+          action: 'Selected a Adhigaram'
+      });
 
       var thirukurals = _.map(filteredKurals, thirukural => _.pick(thirukural, 'kural', 'meaning'))
       this.props.onSelectOfAdhigaram(thirukurals);
