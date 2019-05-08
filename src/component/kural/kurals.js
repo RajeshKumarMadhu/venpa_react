@@ -17,10 +17,13 @@ const Kurals = ({kurals}) =>{
       <ul className="kural-list">
         {kuralElement}
       </ul>
-      <div className="pull-right fixed-menu">
-          <AlertDialogSlide divId='k0'/>
-      </div>
+
     </div>
   )
 }
 export default Kurals;
+
+/* <div className="pull-right fixed-menu">
+    <AlertDialogSlide divId='k0'/>
+</div>
+*/

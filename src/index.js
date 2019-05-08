@@ -2,13 +2,14 @@ import _ from 'lodash';
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
+import ReactGA from 'react-ga';
 
 import HeaderContent from './component/header';
 import Kurals from './component/kural/kurals';
 import MuppaalTabs from './component/muppaaltabs/muppaaltabs';
 import AdhigaramsTab from './component/adhigaramtabs/adhigaramstab'
 
-var info = {title:'திருக்குறள்',thirukuralData: '',muppaal:[]};
+var info = {title:'திருக்குறள்',thirukuralData: '',muppaal:[],gaAppId:'UA-139831578-1'};
 
 
 class App extends Component{
@@ -36,9 +37,14 @@ class App extends Component{
         info.muppaal = muppaal;
 
         this.setState({muppaal: info.muppaal,selectedPaal:info.muppaal[0].athigarams,kurals: kuralList,fetchedKurals:[]});
+        this.initializeReactGA();
       }.bind(this));
   }
 
+  initializeReactGA() {
+    ReactGA.initialize(info.gaAppId);
+    ReactGA.pageview('/homepage');
+  }
   componentDidCatch(error, info) {
     // Display fallback UI
     this.setState({ hasError: true });

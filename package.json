@@ -42,6 +42,7 @@
     "npm": "^6.9.0",
     "react": "latest",
     "react-dom": "latest",
+    "react-ga": "^2.5.7",
     "react-redux": "latest",
     "react-router": "latest",
     "react-share": "^2.4.0",
