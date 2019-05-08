@@ -3,8 +3,8 @@ import Kural from './kural';
 import AlertDialogSlide from '../socialsharemodal/ssmodal';
 import ReactGA from 'react-ga';
 
-const Kurals = ({kurals}) =>{
-
+const Kurals = ({onSelectOfAdhigaram}) =>{
+  const kurals = onSelectOfAdhigaram
   if(!kurals)
     return <div> Loading kural ...</div>
 
@@ -23,7 +23,6 @@ const Kurals = ({kurals}) =>{
       <ul className="kural-list">
         {kuralElement}
       </ul>
-
     </div>
   )
 }

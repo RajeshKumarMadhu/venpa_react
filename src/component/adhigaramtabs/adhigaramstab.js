@@ -39,7 +39,6 @@ class ScrollableTabsButtonAuto extends React.Component {
   render() {
   //  const { classes } = this.props;
   //  const { value } = this.state;
-
     if(!this.props.adhigarams)
         return <div> Loading .. </div>
 

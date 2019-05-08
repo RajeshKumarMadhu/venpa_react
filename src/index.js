@@ -70,7 +70,7 @@ class App extends Component{
           <br/>
           <AdhigaramsTab adhigarams={this.state.selectedPaal} kurals={this.state.kurals}
            onSelectOfAdhigaram={fetchedKurals=>this.setState({fetchedKurals})} />
-          <Kurals kurals={this.state.fetchedKurals}/>
+          <Kurals onSelectOfAdhigaram={this.state.fetchedKurals}/>
        </ div>
      </div>
     </div>
