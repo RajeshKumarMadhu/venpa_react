@@ -36,7 +36,10 @@ class App extends Component{
         muppaal.push({name:'காமத்துப்பால்',athigarams :inbam_athigarams});
         info.muppaal = muppaal;
 
-        this.setState({muppaal: info.muppaal,selectedPaal:info.muppaal[0].athigarams,kurals: kuralList,fetchedKurals:[]});
+        var filteredKurals = _.where(kuralList,{chapter: 'கடவுள் வாழ்த்து'});
+        var thirukurals = _.map(filteredKurals, thirukural => _.pick(thirukural, 'kural', 'meaning'));
+
+        this.setState({muppaal: info.muppaal,selectedPaal:info.muppaal[0].athigarams,kurals: kuralList,fetchedKurals:thirukurals});
         this.initializeReactGA();
       }.bind(this));
   }
