@@ -4,6 +4,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
 
 const styles = theme => ({
   root: {
@@ -21,8 +22,15 @@ class MuppaalTab extends React.Component {
     this.setState({ value });
   };
 
-  render() {
+  trackingEvent() {
+    ReactGA.event({
+        category: 'Navigation',
+        action: 'Selected A Paal'
+      });
+  }
 
+  render() {
+    this.trackingEvent();
     const { classes, theme } = this.props;
 //  <Paal key={paal.name} paal={paal} onSelectedPaal={this.props.onSelectedPaal} value={key}/>
     const paalElement = this.props.muppaal.map((paal,key)=>{
